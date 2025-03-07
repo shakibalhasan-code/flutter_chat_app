@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 class AppBinding {
   static Bindings appBindings = BindingsBuilder(() {
-    Get.lazyPut(() => ChatController());
-    Get.lazyPut(() => SocketServices());
+    Get.lazyPut(() => SocketServices(), fenix: true);
+    Get.lazyPut(() => ChatController(), fenix: true);
   });
 }

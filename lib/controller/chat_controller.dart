@@ -1,19 +1,25 @@
+import 'package:chat_app_mobile/core/services/api_services.dart';
+import 'package:chat_app_mobile/core/utils/app_constant.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:http/http.dart' as http;
 
 class ChatController extends GetxController {
-  List<Map<String, dynamic>> messages = [
-    {'message': 'Hey brother, how are you?', 'isSender': true},
-    {'message': 'I’m good! How about you?', 'isSender': false},
-    {'message': 'Doing great, just working on a project.', 'isSender': true},
-    {'message': 'That’s awesome! What are you building?', 'isSender': false},
-    {'message': 'A new chat app with Flutter and Node.js!', 'isSender': true},
-    {'message': 'Sounds interesting! Need any help?', 'isSender': false},
-    {'message': 'Yeah, could use some feedback on the UI.', 'isSender': true},
-    {'message': 'Sure, send me some screenshots!', 'isSender': false},
-    {'message': 'Alright, give me a moment.', 'isSender': true},
-    {'message': 'No rush, take your time.', 'isSender': false},
-  ];
+  final messageController = TextEditingController();
+  final socketServices = Get.find<ChatController>();
 
-  static String senderId = '67ac27821324b8052ead97ac';
-  static String receiverId = '67ad73303fb4f46d5ee6112d';
+  @override
+  void onInit() {
+    super.onInit();
+  }
+
+  //demo userid
+  var messages = [].obs;
+
+  void sendMessage(String message) async {
+    if (messageController.text.isEmpty) {
+      return;
+    }
+    socketServices.sendMessage(message);
+  }
 }

@@ -9,7 +9,7 @@ class AppStyles extends GetxController {
   static Color secondaryColor = Color(0xff292F3F);
   static Color primaryBgColor = primaryColor;
   static Color buttonColor = secondaryColor;
-  static Color themeGreyColor = Color(0xff7A8194);
+  static Color themeGreyColor = Color.fromARGB(255, 21, 22, 26);
 
   ///radius
   static double buttonBorderRadius = 12;

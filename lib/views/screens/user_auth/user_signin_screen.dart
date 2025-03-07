@@ -36,6 +36,7 @@ class UserSigninScreen extends StatelessWidget {
               ),
               SizedBox(height: 15.h),
               TextField(
+                style: AppStyles.smallText,
                 decoration: InputDecoration(hintText: 'enter your partner ID'),
               ),
               SizedBox(height: 5.h),
