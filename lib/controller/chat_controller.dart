@@ -13,4 +13,7 @@ class ChatController extends GetxController {
     {'message': 'Alright, give me a moment.', 'isSender': true},
     {'message': 'No rush, take your time.', 'isSender': false},
   ];
+
+  static String senderId = '67ac27821324b8052ead97ac';
+  static String receiverId = '67ad73303fb4f46d5ee6112d';
 }
